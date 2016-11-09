@@ -1,15 +1,10 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package edu.elon.model;
 
 import java.io.Serializable;
 import java.text.DecimalFormat;
-/**
- *
- * @author jameszach
+/** 
+ * Copyright (C) 2016 - James Greenwell
+ * Elon University
  */
 public class InvestmentCalculator implements Serializable{
   
@@ -90,6 +85,7 @@ public class InvestmentCalculator implements Serializable{
     this.df = df;
   }
   
+  //Calculates the future monetary value of your investment
   public void calcFutureVal(){
     double cGrowth = cash;
     double rateOfGrowth = 1.0 + (ratePercent/100.0);

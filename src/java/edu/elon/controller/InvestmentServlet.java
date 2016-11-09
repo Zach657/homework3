@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package edu.elon.controller;
 
 import edu.elon.model.InvestmentCalculator;
@@ -13,9 +8,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-/**
- *
- * @author jameszach
+/** 
+ * Copyright (C) 2016 - James Greenwell
+ * Elon University
  */
 @WebServlet(name = "InvestmentServlet", urlPatterns = {"/calculate"})
 public class InvestmentServlet extends HttpServlet {
@@ -29,7 +24,8 @@ public class InvestmentServlet extends HttpServlet {
    * @throws ServletException if a servlet-specific error occurs
    * @throws IOException if an I/O error occurs
    */
-  protected void processRequest(HttpServletRequest request, HttpServletResponse response)
+  protected void processRequest(HttpServletRequest request, 
+          HttpServletResponse response)
           throws ServletException, IOException {
     String action = request.getParameter("action");
     //sets the default action if none is given
@@ -38,13 +34,16 @@ public class InvestmentServlet extends HttpServlet {
     }
     System.out.println(action);
     if(action.equals("Calculate")){
-      Double investAmount = Double.parseDouble(request.getParameter("investAmount"));
-      Double interestRate = Double.parseDouble(request.getParameter("interestRate"));
+      Double investAmount = Double.parseDouble(
+              request.getParameter("investAmount"));
+      Double interestRate = Double.parseDouble(
+              request.getParameter("interestRate"));
       int numYears = Integer.parseInt(request.getParameter("numYears"));
       System.out.println("Investment Amount: " + investAmount);
       System.out.println("Interest Rate: " + interestRate);
       System.out.println("Years: " + numYears);
-      InvestmentCalculator invCalc = new InvestmentCalculator(investAmount,interestRate,numYears);
+      InvestmentCalculator invCalc = new InvestmentCalculator(investAmount,
+              interestRate,numYears);
       invCalc.calcFutureVal();
       request.setAttribute("investCalc",invCalc);
       //redirects user to result.jsp
@@ -58,7 +57,8 @@ public class InvestmentServlet extends HttpServlet {
     }
   }
 
-  // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
+  // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. 
+  // Click on the + sign on the left to edit the code.">
   /**
    * Handles the HTTP <code>GET</code> method.
    *
@@ -82,19 +82,9 @@ public class InvestmentServlet extends HttpServlet {
    * @throws IOException if an I/O error occurs
    */
   @Override
-  protected void doPost(HttpServletRequest request, HttpServletResponse response)
+  protected void doPost(HttpServletRequest request, 
+          HttpServletResponse response)
           throws ServletException, IOException {
     processRequest(request, response);
   }
-
-  /**
-   * Returns a short description of the servlet.
-   *
-   * @return a String containing servlet description
-   */
-  @Override
-  public String getServletInfo() {
-    return "Short description";
-  }// </editor-fold>
-
 }
