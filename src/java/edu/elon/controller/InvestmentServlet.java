@@ -2,6 +2,8 @@ package edu.elon.controller;
 
 import edu.elon.model.InvestmentCalculator;
 import java.io.IOException;
+import java.util.Calendar;
+import java.util.GregorianCalendar;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -27,6 +29,12 @@ public class InvestmentServlet extends HttpServlet {
   protected void processRequest(HttpServletRequest request, 
           HttpServletResponse response)
           throws ServletException, IOException {
+    
+    //fetch current year for copyright
+    GregorianCalendar currentDate = new GregorianCalendar();
+    int currentYear = currentDate.get(Calendar.YEAR);
+    request.setAttribute("currentYear", currentYear);
+    
     String action = request.getParameter("action");
     //sets the default action if none is given
     if(action == null){
