@@ -1,7 +1,7 @@
 package edu.elon.model;
 
 import java.io.Serializable;
-import java.text.DecimalFormat;
+
 /** 
  * Copyright (C) 2016 - James Greenwell
  * Elon University
@@ -9,32 +9,23 @@ import java.text.DecimalFormat;
 public class InvestmentCalculator implements Serializable{
   
   private double cash;
-  private String formattedCash = "0";
   private double ratePercent;
   private int years;
-  private String futureVal;
-  private DecimalFormat df = new DecimalFormat("#.00");
+  private double futureVal;
   
   public InvestmentCalculator(){
     this.cash = 0;
-    df = new DecimalFormat("#.00");
-    df.setGroupingUsed(true);
-    df.setGroupingSize(3);
-    this.formattedCash = df.format(this.cash);
+
     this.ratePercent = 0;
     this.years=0;
-    this.futureVal = "0";
+    this.futureVal = 0;
   }
   
   public InvestmentCalculator(double cash, double ratePercent, int years){
     this.cash = cash;
-    df = new DecimalFormat("#.00");
-    df.setGroupingUsed(true);
-    df.setGroupingSize(3);
-    this.formattedCash = df.format(this.cash);
     this.ratePercent = ratePercent;
     this.years = years;
-    this.futureVal = "0";
+    this.futureVal = 0;
   }
   
   public double getCash(){
@@ -61,28 +52,12 @@ public class InvestmentCalculator implements Serializable{
     this.years = years;
   }
   
-  public String getFutureVal(){
+  public double getFutureVal(){
     return this.futureVal;
   }
   
-  public void setFutureVal(String futureVal){
+  public void setFutureVal(double futureVal){
     this.futureVal = futureVal;
-  }
-  
-  public String getFormattedCash(){
-    return this.formattedCash;
-  }
-  
-  public void setFormattedCash(String formattedCash){
-    this.formattedCash = formattedCash;
-  }
-  
-  public DecimalFormat getDf(){
-    return this.df;
-  }
-  
-  public void setDf(DecimalFormat df){
-    this.df = df;
   }
   
   //Calculates the future monetary value of your investment
@@ -92,6 +67,6 @@ public class InvestmentCalculator implements Serializable{
     for(int i = 0; i < years;i++){
       cGrowth = cGrowth*rateOfGrowth;
     }
-    futureVal = df.format(cGrowth);
+    futureVal = cGrowth;
   }
 }

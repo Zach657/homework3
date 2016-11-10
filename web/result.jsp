@@ -2,6 +2,7 @@
     Created on : Oct 21, 2016, 1:08:20 AM
     Author     : James Greenwell, Casey Hayes
 --%>
+    <%@taglib prefix="elon" uri="/WEB-INF/tag.tld"%>
     <%@include file="includes/header.jsp" %>
     <header>
       <h1>Future Value Calculator</h1>
@@ -11,21 +12,19 @@
       <table>
         <tr>
           <th>Investment Amount:</th>
-          <td>&dollar;<jsp:getProperty name = "investCalc" 
-                           property="formattedCash"/></td>
+          <td><elon:currencyFormat number="${investCalc.cash}"></elon:currencyFormat></td>
         </tr>
         <tr>
           <th>Yearly Interest Rate:</th>
-          <td><jsp:getProperty name = "investCalc" property="ratePercent"/></td>
+          <td>${investCalc.ratePercent}</td>
         </tr>
         <tr>
           <th>Number of Years:</th>
-          <td><jsp:getProperty name = "investCalc" property="years"/></td>
+          <td>${investCalc.years}</td>
         </tr>
         <tr>
           <th>Future Value:</th>
-          <td>&dollar;<jsp:getProperty name = "investCalc" 
-                           property="futureVal"/></td>
+          <td>${futureVal}<elon:currencyFormat number="${investCalc.futureVal}"></elon:currencyFormat></td>
         </tr>
       </table>
     <%@include file="includes/footer.jsp" %>
