@@ -2,8 +2,10 @@
     Elon University
     September 12th, 2016
 -->
+
+<%@taglib prefix="date" uri="/WEB-INF/date" %> <%-- Taking this out (and the reference below) removes the 404--%>
     <footer>
-      &copy; ${currentYear}, James Greenwell &AMP; Sean Webber
+      &copy; <date:currentDate />, James Greenwell &AMP; Casey Hayes
     </footer>
   </body>
 </html>

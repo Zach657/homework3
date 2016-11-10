@@ -13,7 +13,7 @@ public class InvestmentCalculator implements Serializable{
   private double ratePercent;
   private int years;
   private String futureVal;
-  private DecimalFormat df = new DecimalFormat("#.00"); 
+  private DecimalFormat df = new DecimalFormat("#.00");
   
   public InvestmentCalculator(){
     this.cash = 0;
