@@ -9,6 +9,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /** 
  * Copyright (C) 2016 - James Greenwell, Casey Hayes
@@ -52,8 +53,12 @@ public class InvestmentServlet extends HttpServlet {
       System.out.println("Years: " + numYears);
       InvestmentCalculator invCalc = new InvestmentCalculator(investAmount,
               interestRate,numYears);
+      
+      HttpSession session = request.getSession();
+      session.setAttribute("investCalc",invCalc);
+      
       invCalc.calcFutureVal();
-      request.setAttribute("investCalc",invCalc);
+      
       //redirects user to result.jsp
       String url = "/result.jsp";
       getServletContext().getRequestDispatcher(url).forward(request, response);
