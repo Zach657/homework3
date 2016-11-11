@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package edu.elon.tags;
 
 import java.io.IOException;
@@ -12,9 +7,9 @@ import java.text.DecimalFormat;
 import javax.servlet.jsp.JspException;
 import javax.servlet.jsp.JspWriter;
 
-/**
- *
- * @author jameszach
+/** 
+ * Copyright (C) 2016 - James Greenwell, Casey Hayes
+ * Elon University
  */
 public class CurrencyFormatTag extends TagSupport{
   //Allows a number to be passed to the tag

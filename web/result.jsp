@@ -7,8 +7,6 @@
     <header>
       <h1>Future Value Calculator</h1>
     </header>
-    <jsp:useBean id="investCalc" scope="request" 
-                 class="edu.elon.model.InvestmentCalculator"/>
       <table>
         <tr>
           <th>Investment Amount:</th>
@@ -22,9 +20,24 @@
           <th>Number of Years:</th>
           <td>${investCalc.years}</td>
         </tr>
-        <tr>
-          <th>Future Value:</th>
-          <td>${futureVal}<elon:currencyFormat number="${investCalc.futureVal}"></elon:currencyFormat></td>
-        </tr>
       </table>
+      <table id="yoyt">
+        <thead>
+          <tr>
+            <th>Year</th>
+            <th>Value</th>
+          </tr> 
+        </thead>
+        <c:forEach var="i" begin="1" end="${investCalc.years}">
+          <tr>
+            <th>${i}</th>
+            <td><elon:currencyFormat number="${investCalc.yoyVals[i-1]}"></elon:currencyFormat></td>
+          </tr>
+        </c:forEach>
+      </table>
+      <div>
+        <a href="<c:url value='/calculate'/>">
+          Return to Calculator
+        </a> 
+      </div>
     <%@include file="includes/footer.jsp" %>

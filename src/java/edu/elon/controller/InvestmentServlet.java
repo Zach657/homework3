@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /** 
- * Copyright (C) 2016 - James Greenwell
+ * Copyright (C) 2016 - James Greenwell, Casey Hayes
  * Elon University
  */
 @WebServlet(name = "InvestmentServlet", urlPatterns = {"/calculate"})

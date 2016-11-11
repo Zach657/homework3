@@ -1,5 +1,5 @@
 /*
-  Copyright © James Greenwell, Sean Webber
+  Copyright © James Greenwell, Casey Hayes
   Elon University
   October 22th, 2016
 */
@@ -15,22 +15,44 @@ body > *{
 }
 
 table{
-  margin: 0 auto;
+
   padding-top: 0;
+  padding-bottom: 0;
 }
 
-table tr>*{
+table *>*{
   font-size: 1.1em;
+  text-align: left;
+}
+
+#yoyt{
+  padding-bottom: 1em;
+}
+
+#yoyt thead *{
+  font-weight: bold;
+}
+
+#yoyt tr th{
+  padding-right: 3em;
+  width:40%;
+}
+
+#yoyt tr th:first-child{
+  text-align: right;
+}
+
+#yoyt tr td{
+  width:60%;
 }
 
 th{
   font-weight: normal;
   padding-right: 1em;
-  text-align: right;
 }
 
-td{
-  text-align: left;
+a{
+  font-size: 1.1em;
 }
 
 header h1{
@@ -38,7 +60,6 @@ header h1{
   font-size: 1.4em;
   font-weight: bold;
   margin: 0;
-  padding-left: .6em;
   padding-right: .6em;
   padding-top: 1em;
 }
@@ -88,6 +109,7 @@ article{
   
   header h1{
     font-size:2em;
+    padding-left: .6em;
   }
   
   footer {
@@ -103,6 +125,15 @@ article{
     font-size: 1.4em;
     text-align: right;
     width:35%;
+  }
+  
+  table {
+    margin: 0 auto;
+  }
+  
+  a{
+    font-size: 1.2em;
+    padding-left: 1em;
   }
   
   form input{
