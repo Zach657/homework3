@@ -31,11 +31,6 @@ public class InvestmentServlet extends HttpServlet {
           HttpServletResponse response)
           throws ServletException, IOException {
     
-    //fetch current year for copyright
-    GregorianCalendar currentDate = new GregorianCalendar();
-    int currentYear = currentDate.get(Calendar.YEAR);
-    request.setAttribute("currentYear", currentYear);
-    
     String action = request.getParameter("action");
     //sets the default action if none is given
     if(action == null){

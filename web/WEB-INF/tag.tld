@@ -13,4 +13,8 @@
       <type>double</type>
     </attribute>
   </tag>
+  <tag>
+    <name>DateTag</name>
+    <tag-class>edu.elon.tags.DateTag</tag-class>
+  </tag>
 </taglib>

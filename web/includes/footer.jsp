@@ -2,9 +2,9 @@
     Elon University
     September 12th, 2016
 -->
-
+<%@taglib prefix="elon" uri="/WEB-INF/tag.tld" %>
     <footer>
-      &copy; 2016, James Greenwell &AMP; Casey Hayes
+      &copy; <elon:DateTag />, James "JZ" Greenwell &AMP; Casey Hayes
     </footer>
   </body>
 </html>
