@@ -4,7 +4,7 @@
 -->
 <%@taglib prefix="elon" uri="/WEB-INF/tag.tld" %>
     <footer>
-      &copy; <elon:DateTag />, James "JZ" Greenwell &AMP; Casey Hayes
+      &copy; <elon:dateTag />, James "JZ" Greenwell &AMP; Casey Hayes
     </footer>
   </body>
 </html>

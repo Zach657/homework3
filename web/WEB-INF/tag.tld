@@ -14,7 +14,7 @@
     </attribute>
   </tag>
   <tag>
-    <name>DateTag</name>
+    <name>dateTag</name>
     <tag-class>edu.elon.tags.DateTag</tag-class>
   </tag>
 </taglib>
