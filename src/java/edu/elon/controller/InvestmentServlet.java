@@ -41,16 +41,12 @@ public class InvestmentServlet extends HttpServlet {
     if(action == null){
       action = "Invest";
     }
-    System.out.println(action);
     if(action.equals("Calculate")){
       Double investAmount = Double.parseDouble(
               request.getParameter("investAmount"));
       Double interestRate = Double.parseDouble(
               request.getParameter("interestRate"));
       int numYears = Integer.parseInt(request.getParameter("numYears"));
-      System.out.println("Investment Amount: " + investAmount);
-      System.out.println("Interest Rate: " + interestRate);
-      System.out.println("Years: " + numYears);
       InvestmentCalculator invCalc = new InvestmentCalculator(investAmount,
               interestRate,numYears);
       

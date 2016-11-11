@@ -22,7 +22,6 @@ public class CurrencyFormatTag extends TagSupport{
     df = new DecimalFormat("#.00");
     df.setGroupingUsed(true);
     df.setGroupingSize(3);
-    System.out.println(input);
     this.number = "$" + df.format(input);
   }
   
