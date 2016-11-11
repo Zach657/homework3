@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package edu.elon.tags;
 
 import java.io.IOException;
@@ -13,14 +8,18 @@ import javax.servlet.jsp.JspException;
 import static javax.servlet.jsp.tagext.Tag.SKIP_BODY;
 import javax.servlet.jsp.tagext.TagSupport;
 
-/**
- *
- * @author casey
+/** 
+ * Copyright (C) 2016 - James Greenwell, Casey Hayes
+ * Elon University
  */
+
+//making this a generic date tag to be open to extension of other date values
 public class DateTag extends TagSupport {
 
  @Override
-  public int doStartTag() throws JspException {    
+  public int doStartTag() throws JspException {
+    
+    //find current year from calendar
     GregorianCalendar currentDate = new GregorianCalendar();
     int currentYear = currentDate.get(Calendar.YEAR);
 
